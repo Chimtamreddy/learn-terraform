@@ -15,9 +15,6 @@ variable "fruits" {
   ]
 }
 
-output "fruits" {
-  value = var.fruits
-}
 
 # Map Variable
 variable "fruit_stock" {
@@ -25,10 +22,6 @@ variable "fruit_stock" {
     kiwi = 100
     orange = 200
   }
-}
-
-output "fruit_stock" {
-  value = var.fruit_stock
 }
 
 # Map Variable, Map of Maps
