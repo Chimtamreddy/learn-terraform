@@ -28,7 +28,7 @@ variable "fruit_stock" {
 }
 
 output "fruit_stock" {
-  value = var.fruit_stock[1]
+  value = var.fruit_stock
 }
 
 
