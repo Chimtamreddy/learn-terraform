@@ -1,20 +1,13 @@
 resource "aws_instance" "frontend" {
   ami           = "ami-0f3c7d07486cad139"
   instance_type = "t3.micro"
-  vpc_security_group_ids = ["sg-061167548882a91e3"]
+
 
   tags = {
     Name = "frontend"
   }
 }
 
-resource "aws_route53_record" "frontend" {
-  zone_id = "Z05847051QFB84Q2A5JP0"
-  name    = "frontend-dev.kr7348202.online"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.frontend.private_ip]
-}
 
 resource "aws_instance" "mongodb" {
   ami           = "ami-0f3c7d07486cad139"
