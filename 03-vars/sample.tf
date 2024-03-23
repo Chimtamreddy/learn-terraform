@@ -16,7 +16,7 @@ variable "fruits" {
 }
 
 output "fruits" {
-  value = var.fruits
+  value = var.fruits[0]
 }
 
 # Map Variable
@@ -28,7 +28,7 @@ variable "fruit_stock" {
 }
 
 output "fruit_stock" {
-  value = var.fruit_stock
+  value = var.fruit_stock[1]
 }
 
 
