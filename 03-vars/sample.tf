@@ -64,5 +64,5 @@ output "fruit_stock_orange" {
 }
 
 output "fruit_stock_with_price_of_kiwi" {
-  value = var.fruit_stock["kiwi"].stock
+  value = var.fruit_stock["kiwi"].price
 }
