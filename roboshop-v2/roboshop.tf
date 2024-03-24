@@ -47,3 +47,7 @@ resource "aws_instance" "instance" {
 #  ttl     = 30
 #  records = [aws_instance.frontend.private_ip]
 #}
+
+output "instance" {
+  value = aws_instance.instance
+}
