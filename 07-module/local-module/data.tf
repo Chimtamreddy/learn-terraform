@@ -14,3 +14,4 @@ resource "aws_instance" "instance" {
 
 }
 
+variable "instance_type" {}
