@@ -13,3 +13,5 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = ["sg-0cd45286220a14e5a"]
 
 }
+
+variable "instance_type" {}
