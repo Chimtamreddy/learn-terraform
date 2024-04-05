@@ -17,5 +17,5 @@ variable "components" {
 
 resource "aws_security_group" "allow_tls" {
   count = length(var.components)
-  name = var.components[count.index]
+  name = element(var.components, count.index)
 }
