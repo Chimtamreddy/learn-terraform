@@ -10,8 +10,6 @@ output "ami" {
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.id
   instance_type = "t3.small"
-  vpc_security_group_ids = ["sg-061167548882a91e3"]
+  vpc_security_group_ids = ["sg-0cd45286220a14e5a"]
 
 }
-
-variable "instance_type" {}
