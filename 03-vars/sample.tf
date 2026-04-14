@@ -29,6 +29,7 @@ output "fruit_with_stock_1" {
 
 # Map Variables
 variable "fruit" {
+  default = {
     apple = {
       stock = 100
       price = 10
@@ -37,6 +38,7 @@ variable "fruit" {
       stock = 400
       price = 20
     }
+  }
 }
 
 output "fruit_2" {
