@@ -55,7 +55,7 @@ variable "fruit_stock_with" {
       stock = 200 # integer
       price = 2
       type = "washington" # string
-      for_sale = ture # boolean
+      for_sale = true # boolean
     }
   }
 }
