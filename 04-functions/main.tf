@@ -4,7 +4,7 @@ variable "components" {
 
 output "components" {
 #  value = var.components[0]
-  value = elements(var.components, 3)
+  value = element(var.components, 3)
 }
 
 variable "fruits_with_stock" {
@@ -18,5 +18,5 @@ variable "fruits_with_stock" {
 
 output "fruits_with_stock" {
 #  value = var.fruits_with_stock["apple"].stock
-  value = try(var.fruits_with_stock["apple"], price)
+  value = try(var.fruits_with_stock["banana"], 0)
 }
