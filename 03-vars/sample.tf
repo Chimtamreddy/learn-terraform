@@ -26,3 +26,22 @@ output "fruit_with_stock" {
 output "fruit_with_stock_1" {
   value = var.fruit_with_stock[1]
 }
+
+# Map Variables
+variable "fruit" {
+    apple = {
+      stock = 100
+      price = 10
+    }
+    mango = {
+      stock = 400
+      price = 20
+    }
+}
+
+output "fruit_2" {
+  value = var.fruit["apple"].stock
+}
+output "fruit_with_price" {
+  value = var.fruit["apple"].price
+}
