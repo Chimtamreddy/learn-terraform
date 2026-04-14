@@ -47,3 +47,19 @@ output "fruit_2" {
 output "fruit_with_price" {
   value = var.fruit["apple"].price
 }
+
+# Variable Data Types
+variable "fruit_stock_with" {
+  default = {
+    apple = {
+      stock = 200 # integer
+      price = 2
+      type = "washington" # string
+      for_sale = ture # boolean
+    }
+  }
+}
+
+output "fruit_stock_with" {
+  value = "Apple Stock = ${var.fruit_stock_with["apple"].stock}, Apple Price = ${var.fruit_stock_with["apple"].price}, Apple Type = ${var.fruit_stock_with["apple"].type}, Apple Sale Status=${var.fruit_stock_with["apple"].for_sale}"
+}
