@@ -64,7 +64,7 @@ variable "fruit_w" {
   default = "pinaple"
 }
 output "fruit_w" {
-  value =" Fruit Name = {var.fruit_w}"
+  value = "Fruit Name = {var.fruit_w}"
 }
 
 output "fruit_stock_with" {
