@@ -60,6 +60,13 @@ variable "fruit_stock_with" {
   }
 }
 
+variable "fruit_w" {
+  default = "pinaple"
+}
+output "fruit_w" {
+  value =" Fruit Name = {var.fruit_w}"
+}
+
 output "fruit_stock_with" {
   value = "Apple Stock = ${var.fruit_stock_with["apple"].stock}, Apple Price = ${var.fruit_stock_with["apple"].price}, Apple Type = ${var.fruit_stock_with["apple"].type}, Apple Sale Status=${var.fruit_stock_with["apple"].for_sale}"
 }
