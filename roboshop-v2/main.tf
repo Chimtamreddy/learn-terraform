@@ -12,7 +12,16 @@ variable "security_groups" {
 variable "zone_id" {
   zone_id = "Z08590761XW1O9G92270H"
 }
-resource "aws_instance" "frontend" {
+
+variable "components" {
+  frontend = { name = "frontend" }
+  mongodb = { name = "mongodb" }
+  catalogue = { name = "catalogue" }
+  redis = { name = "redis" }
+}
+
+resource "aws_instance" "instance" {
+  for_each = var.components
   ami           = var.ami
   instance_type = var.instance_type
   vpc_security_group_ids = var.security_groups
@@ -21,10 +30,15 @@ resource "aws_instance" "frontend" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
-  zone_id = var.zone_id
-  name    = "frontend-dev.anysite.info"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+# resource "aws_route53_record" "frontend" {
+#   for_each = var.components
+#   zone_id = var.zone_id
+#   name    = "frontend-dev.anysite.info"
+#   type    = "A"
+#   ttl     = 30
+#   records = [aws_instance.frontend.private_ip]
+# }
+
+output "aws_instance" {
+  value = aws_instance.instance
 }

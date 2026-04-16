@@ -8,9 +8,14 @@ variable "components" {
   }
 }
 
+# resource "aws_security_group" "allow_tls" {
+#   for_each = var.components
+#   tags = {
+#     Name = each.key
+#   }
+# }
+
 resource "aws_security_group" "allow_tls" {
   for_each = var.components
-  tags = {
-    Name = each.key
-  }
+  name     = lookup(var.components, each.value["name"], null)
 }
