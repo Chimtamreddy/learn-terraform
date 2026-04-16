@@ -14,10 +14,13 @@ variable "zone_id" {
 }
 
 variable "components" {
-  frontend = { name = "frontend-dev" }
-  mongodb = { name = "mongodb-dev" }
-  catalogue = { name = "catalogue-dev" }
-  redis = { name = "redis-dev" }
+  default = {
+    frontend = { name = "frontend-dev" }
+    mongodb = { name = "mongodb-dev" }
+    catalogue = { name = "catalogue-dev" }
+    redis = { name = "redis-dev" }
+  }
+
 }
 
 resource "aws_instance" "instance" {
