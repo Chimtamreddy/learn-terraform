@@ -10,6 +10,6 @@ variable "components" {
 resource "aws_security_group" "allow_tls" {
   for_each = var.components
   tags = {
-    Name = element(var.components, each.key)
+    Name = element(var.components, "each.key")
   }
 }
