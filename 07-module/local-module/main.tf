@@ -4,6 +4,6 @@ data "aws_ami_ids" "ami" {
 
 }
 
-# output "aws_ami" {
-#   value = data.aws_ami_ids.ami
-# }
+output "aws_ami" {
+  value = data.aws_ami_ids.ami
+}
