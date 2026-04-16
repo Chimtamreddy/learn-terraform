@@ -14,10 +14,10 @@ variable "zone_id" {
 }
 
 variable "components" {
-  frontend = { name = "frontend" }
-  mongodb = { name = "mongodb" }
-  catalogue = { name = "catalogue" }
-  redis = { name = "redis" }
+  frontend = { name = "frontend-dev" }
+  mongodb = { name = "mongodb-dev" }
+  catalogue = { name = "catalogue-dev" }
+  redis = { name = "redis-dev" }
 }
 
 resource "aws_instance" "instance" {
@@ -25,9 +25,7 @@ resource "aws_instance" "instance" {
   ami           = var.ami
   instance_type = var.instance_type
   vpc_security_group_ids = var.security_groups
-  tags = {
-    Name = "frontend"
-  }
+
 }
 
 # resource "aws_route53_record" "frontend" {
