@@ -33,14 +33,14 @@ resource "aws_instance" "instance" {
   }
 }
 
-# resource "aws_route53_record" "frontend" {
-#   for_each = var.components
-#   zone_id = var.zone_id
-#   name    = "frontend-dev.anysite.info"
-#   type    = "A"
-#   ttl     = 30
-#   records = [aws_instance.frontend.private_ip]
-# }
+resource "aws_route53_record" "frontend" {
+  for_each = var.components
+  zone_id = var.zone_id
+  name    = "${each.value}-dev.anysite.info"
+  type    = "A"
+  ttl     = 30
+  # records = lookup(aws_instance.instance, )
+}
 
 output "aws_instance" {
   value = aws_instance.instance
