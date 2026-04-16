@@ -17,7 +17,4 @@ variable "components" {
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls_basic"
   count = length(var.components)
-  vpc_security_group_ids = [
-         "sg-0e3a1d089c9059cfc"
-  ]
 }
