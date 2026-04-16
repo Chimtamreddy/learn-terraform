@@ -49,6 +49,8 @@ resource "aws_route53_record" "record" {
   records = [lookup(lookup(aws_instance.instance, each.key, null), "private_ip", null)]
 }
 
-output "aws_instance" {
-  value = aws_instance.instance
-}
+
+
+# output "aws_instance" {
+#   value = aws_instance.instance
+# }
