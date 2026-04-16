@@ -1,8 +1,9 @@
 variable "components" {
   default = {
-    frontend = { name = "frontend" }
-    mongodb = { name = "mongodb" }
-    catalogue = { name = "catalogue" }
+    rabbitmq = { name = "rabbitmq_sg" }
+    frontend = { name = "frontend_sg" }
+    mongodb = { name = "mongodb_sg" }
+    catalogue = { name = "catalogue_sg" }
 
   }
 }
