@@ -15,7 +15,7 @@ variable "components" {
 # }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+  name        = "allow_tls_basic"
   count = length(var.components)
   tags = {
     Name = element(var.components, count.index)
