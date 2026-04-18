@@ -1,1 +1,1 @@
-test = "Hello from Prod"
+default = "Hello from Prod"
