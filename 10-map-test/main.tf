@@ -1,4 +1,4 @@
-vpc = {
+variable "vpc" {
   default = {
     main = {
       cidr = "10.0.0.0/16"
@@ -21,5 +21,5 @@ vpc = {
 }
 
 output "all_subnets" {
-  value = { for k,v in vpc["main"]["subnets"]: k => v}
+  value = { for k,v in var.vpc["main"]["subnets"]: k => v}
 }
