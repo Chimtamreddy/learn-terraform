@@ -1,3 +1,11 @@
+resource "aws_instance" "main" {
+  ami = "ami-0b4f379183e5706b9"
+  instance_type = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.main.id]
+  subnet_id = local.app_subnet_ids[0]
+}
+
+
 resource "aws_security_group" "main" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
